@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-tailwind-project</title>
+ 
+  </head>
+  <body>
+   <header class="site-header" dir="rtl" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <!-- ردیف ۱: هدر بالا -->
+  <div class="header-top py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center flex-wrap md:flex-nowrap gap-y-3">
+
+      <!-- عنوان سایت (راست) -->
+      <div class="site-branding flex items-center gap-4 order-1">
+        <!-- دکمه منو (فقط موبایل) -->
+        <button class="md:hidden p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <!-- نام سایت -->
+        <p class="text-2xl font-bold text-blue-600" style="font-family: 'IRANYekanXFaNum', sans-serif;">کوه نگار</p>
+      </div>
+
+      <!-- جستجو (وسط) -->
+      <div class="product-search relative w-full md:w-auto flex-grow order-2 pr-[25px] pl-[200px]">
+        <form role="search" method="get" action="/">
+            <input
+                type="search"
+                class="w-full bg-gray-100 border border-transparent rounded-lg py-2.5 ps-[15px] pe-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-right placeholder:text-right"
+                placeholder="جستجو در محصولات ..."
+                value=""
+                name="s"
+            />
+            <!-- آیکون جستجو با فاصله 200px از چپ -->
+            <span class="absolute left-[230px] top-1/2 -translate-y-1/2 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </form>
+      </div>
+
+      <!-- ورود و سبد خرید (چپ) -->
+      <div class="header-actions flex items-center gap-3 order-3">
+        <a href="#" class="font-medium text-gray-700 hidden md:inline-block px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          ورود
+        </a>
+        <span class="hidden md:block h-6 w-px bg-gray-300"></span>
+        <a href="#" class="cart-icon text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors" title="سبد خرید">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ردیف ۲: منوی اصلی -->
+  <div class="header-main-nav hidden md:block">
+    <div class="container mx-auto px-4">
+      <nav class="main-navigation py-3">
+        <ul class="flex justify-start items-center gap-8 pr-[13px]">
+          <li><a href="husky.html" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر هاسکی</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر نیچرهایک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کایلاس</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر پکینیو (کله گاوی)</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر اسنوهاک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر بلک دیر</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کچوا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<main role="main">
+    <!-- Wrapper اصلی برای تمام محتوای صفحه -->
+    <div class="mx-auto px-[125px]">
+
+        <!-- بخش اول: عنوان -->
+        <div class="text-center py-16 sm:py-10">
+            <h1 class="text-xl font-bold text-gray-800">
+                کوه نگار، مرجع تخصصی فروش محصولات کمپینگ و کوهنوردی
+            </h1>
+        </div>
+
+        <!-- بخش دوم: تصویر بزرگ با افکت و سایه -->
+        <div class="mb-6">
+             <!-- 
+              کلاس shadow-lg برای ایجاد سایه اضافه شد
+              کلاس hover:shadow-xl برای برجسته‌تر شدن سایه در زمان هاور
+            -->
+            <div class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                <img 
+                    src="https://placehold.co/1265x393/e2e8f0/334155?text=Your+Image+Here" 
+                    alt="بنر محصولات کمپینگ و کوهنوردی"
+                    width="1264.8"
+                    height="392.788"
+                    class="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                >
+            </div>
+        </div>
+
+        <!-- بخش سوم: دو بنر کوچک کنار هم -->
+        <div class="flex flex-col md:flex-row gap-6 mb-16 sm:mb-24">
+            
+            <!-- بنر سمت راست -->
+            <div class="w-full md:w-1/2">
+                <!-- تمام افکت‌های هاور و سایه مانند بنر اصلی اعمال شده است -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <img 
+                        src="https://placehold.co/620x248/e2e8f0/334155?text=Banner+1" 
+                        alt="بنر دسته بندی اول"
+                        width="620.4"
+                        height="248.15"
+                        class="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    >
+                </div>
+            </div>
+
+            <!-- بنر سمت چپ -->
+            <div class="w-full md:w-1/2">
+                <!-- تمام افکت‌های هاور و سایه مانند بنر اصلی اعمال شده است -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <img 
+                        src="https://placehold.co/620x248/dbeafe/1e3a8a?text=Banner+2" 
+                        alt="بنر دسته بندی دوم"
+                        width="620.4"
+                        height="248.15"
+                        class="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    >
+                </div>
+            </div>
+
+        </div>
+<!-- =================================================================== -->
+<!-- بخش چهارم: برندهای پرطرفدار -->
+<!-- =================================================================== -->
+<div class="mb-16 sm:mb-24">
+
+    <!-- عنوان بخش -->
+    <h2 class="text-right font-bold text-gray-800 text-[25px] mb-8">
+        برندهای پرطرفدار
+    </h2>
+
+    <!-- گرید نمایش برندها (واکنش‌گرا) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10">
+        
+        <!-- آیتم برند 1: پیکینیو -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <!-- Wrapper لوگو برای افکت‌ها -->
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=Pekynew" 
+                    alt="لوگوی پیکینیو" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <!-- نام برند -->
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                پیکینیو
+            </p>
+        </a>
+
+        <!-- آیتم برند 2: نیچرهایک -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=Naturehike" 
+                    alt="لوگوی نیچرهایک" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                نیچرهایک
+            </p>
+        </a>
+
+        <!-- آیتم برند 3: اسنوهاک -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=SnowHawk" 
+                    alt="لوگوی اسنوهاک" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                اسنوهاک
+            </p>
+        </a>
+
+        <!-- آیتم برند 4: بلک دیر -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=BlackDeer" 
+                    alt="لوگوی بلک دیر" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                بلک دیر
+            </p>
+        </a>
+
+        <!-- آیتم برند 5: هاسکی -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=Husky" 
+                    alt="لوگوی هاسکی" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                هاسکی
+            </p>
+        </a>
+
+        <!-- آیتم برند 6: فرینو -->
+        <a href="#" class="group flex flex-col items-center text-center">
+            <div class="relative w-32 h-32 rounded-full shadow-md transition-all duration-300 ease-in-out 
+                        group-hover:shadow-xl group-hover:scale-105 
+                        border-2 border-transparent group-hover:border-blue-500">
+                
+                <img 
+                    src="https://placehold.co/150x150/e2e8f0/334155?text=Ferrino" 
+                    alt="لوگوی فرینو" 
+                    width="128"
+                    height="128"
+                    class="w-full h-full object-cover rounded-full"
+                >
+            </div>
+            <p class="mt-4 font-semibold text-gray-700 transition-colors duration-300 group-hover:text-blue-500">
+                فرینو
+            </p>
+        </a>
+
+    </div>
+    <!-- =================================================================== -->
+<!-- بخش پنجم: جدیدترین محصولات -->
+<!-- =================================================================== -->
+<div class="mb-16 sm:mb-24">
+
+   <h2 class="text-right font-bold text-gray-800 text-[25px] mb-8 pt-[75px]">
+    جدیدترین محصولات
+</h2>
+
+
+
+    <!-- گرید نمایش محصولات (واکنش‌گرا) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- محصول 1 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر هاسکی مدل t4434"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر هاسکی مدل t4434
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                     ۱۵.۰۰۰.۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 2 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر FIT مدل A56.E"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر FIT مدل A56.E
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۲۲,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 3 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر نیچرهایک مدل VILLAGE"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر نیچرهایک مدل VILLAGE
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۱۰,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 4 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر بلک دیر مدل CS2040"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر بلک دیر مدل CS2040
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۳۵,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+    </div>
+</div>
+</div>
+
+<!-- بخش پنجم: دو بنر کوچک کنار هم -->
+        <div class="flex flex-col md:flex-row gap-6 mb-16 sm:mb-24">
+            
+            <!-- بنر سمت راست -->
+            <div class="w-full md:w-1/2">
+                <!-- تمام افکت‌های هاور و سایه مانند بنر اصلی اعمال شده است -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <img 
+                        src="https://placehold.co/620x248/e2e8f0/334155?text=Banner+1" 
+                        alt="بنر دسته بندی اول"
+                        width="620.4"
+                        height="248.15"
+                        class="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    >
+                </div>
+            </div>
+
+            <!-- بنر سمت چپ -->
+            <div class="w-full md:w-1/2">
+                <!-- تمام افکت‌های هاور و سایه مانند بنر اصلی اعمال شده است -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <img 
+                        src="https://placehold.co/620x248/dbeafe/1e3a8a?text=Banner+2" 
+                        alt="بنر دسته بندی دوم"
+                        width="620.4"
+                        height="248.15"
+                        class="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    >
+                </div>
+            </div>
+        </div>
+
+    <!-- =================================================================== -->
+<!-- بخش ششم: محبوب ترین محصولات -->
+<!-- =================================================================== -->
+<div class="mb-16 sm:mb-24">
+
+   <h2 class="text-right font-bold text-gray-800 text-[25px] mb-8 pt-[1px]">
+    محبوب‌‌ترین محصولات
+</h2>
+
+
+
+    <!-- گرید نمایش محصولات (واکنش‌گرا) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- محصول 1 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر هاسکی مدل t4434"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر هاسکی مدل t4434
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                     ۱۵.۰۰۰.۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 2 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر FIT مدل A56.E"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر FIT مدل A56.E
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۲۲,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 3 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر نیچرهایک مدل VILLAGE"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر نیچرهایک مدل VILLAGE
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۱۰,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+        <!-- محصول 4 -->
+        <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <!-- بخش تصویر -->
+            <div class="overflow-hidden">
+                <img 
+                    src="https://placehold.co/297x208/e2e8f0/334155?text=Product+Image" 
+                    alt="چادر بلک دیر مدل CS2040"
+                    width="296.6"
+                    height="208"
+                    class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"
+                >
+            </div>
+            <!-- بخش محتوا -->
+            <div class="p-4 text-right">
+                <h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">
+                    چادر بلک دیر مدل CS2040
+                </h3>
+                <p class="font-bold text-blue-600 text-left">
+                    ۳۵,۰۰۰,۰۰۰ تومان
+                </p>
+            </div>
+        </a>
+
+    </div>
+</div>
+ <!-- =================================================================== -->
+<!-- بخش هفتم: طبیعت گردی از نگاه شما (مقالات) -->
+<!-- =================================================================== -->
+<div class="mb-16 sm:mb-24">
+
+    <!-- عنوان بخش -->
+    <h2 class="text-right font-bold text-gray-800 text-[25px] mb-8">
+        طبیعت گردی از نگاه شما
+    </h2>
+
+    <!-- گرید نمایش تصاویر مقالات (واکنش‌گرا) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+
+        <!-- تصویر 1 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+1" 
+                alt="تصویر مقاله طبیعت گردی ۱"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+
+        <!-- تصویر 2 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+2" 
+                alt="تصویر مقاله طبیعت گردی ۲"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+
+        <!-- تصویر 3 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+3" 
+                alt="تصویر مقاله طبیعت گردی ۳"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+
+        <!-- تصویر 4 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+4" 
+                alt="تصویر مقاله طبیعت گردی ۴"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+
+        <!-- تصویر 5 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+5" 
+                alt="تصویر مقاله طبیعت گردی ۵"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+        
+        <!-- تصویر 6 -->
+        <a href="#" class="group block relative overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+            <img 
+                src="https://placehold.co/200x200/e2e8f0/334155?text=Article+6" 
+                alt="تصویر مقاله طبیعت گردی ۶"
+                width="197.462"
+                height="197.462"
+                class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+            >
+        </a>
+
+    </div>
+</div>
+
+        <!-- ============================================================ -->
+    </div> <!-- پایان Wrapper اصلی -->
+</main>
+<!-- =================================================================== -->
+<!-- بخش فوتر سایت -->
+<!-- =================================================================== -->
+<footer class="w-full bg-gray-100 border-t border-gray-200 pt-16 pb-12">
+
+    <!-- کانتینر اصلی محتوای فوتر -->
+    <div class="max-w-[1265px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- گرید ۴ ستونی واکنش‌گرا -->
+        <div dir="rtl" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 text-right">
+
+            <!-- ستون اول: درباره فروشگاه -->
+            <div>
+                <h3 class="font-bold text-gray-800 text-[22px] mb-4">
+                    فروشگاه کوه نگار
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    تجهیزات تخصصی برای ماجراجویی‌های شما. ما به کیفیت و دوام محصولاتمان افتخار می‌کنیم.
+                </p>
+            </div>
+
+            <!-- ستون دوم: دسترسی سریع -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    دسترسی سریع
+                </h4>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">صفحه اصلی</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">همه محصولات</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">سوالات متداول</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">قوانین و مقررات</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ستون سوم: تماس با ما -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    تماس با ما
+                </h4>
+                <div class="text-gray-600 text-sm space-y-3">
+                    <p>
+                        <strong>آدرس:</strong><br>
+                        اراک، پارک علم و فناوری استان مرکزی، پلاک ۳۱۷
+                    </p>
+                    <p>
+                        <strong>تلفن:</strong><br>
+                        ۰۸۶-۳۲۲۲۶۰۳۴
+                    </p>
+                    <p>
+                        <strong>ایمیل:</strong><br>
+                        support@koohnegar.com
+                    </p>
+                </div>
+            </div>
+
+            <!-- ستون چهارم: شبکه‌های اجتماعی -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    ما را دنبال کنید
+                </h4>
+                <p class="text-gray-600 text-sm mb-4">
+                    از آخرین اخبار و تخفیف‌ها مطلع شوید.
+                </p>
+                <div class="flex items-center justify-end gap-x-4">
+                    <!-- اینستاگرام -->
+                    <a href="#" aria-label="اینستاگرام" class="text-gray-500 hover:text-pink-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c-4.42 0-5.454 2.115-5.454 6.065v3.868c0 3.95 1.033 6.065 5.454 6.065h.01c4.42 0 5.454-2.115 5.454-6.065v-3.868c0-3.95-1.033-6.065-5.454-6.065zm3.18 10.23c0 2.26-1.06 3.63-3.17 3.63h-.02c-2.11 0-3.17-1.37-3.17-3.63v-3.86c0-2.26 1.06-3.63 3.17-3.63h.02c2.11 0 3.17 1.37 3.17 3.63v3.86zm-6.35-3.86c0-1.78 1.18-2.63 2.18-2.63h.01c1 0 2.18.85 2.18 2.63v3.86c0 1.78-1.18 2.63-2.18 2.63h-.01c-1 0-2.18-.85-2.18-2.63v-3.86zm7.48-2.93c-.41 0-.75.34-.75.75s.34.75.75.75.75-.34.75-.75-.34-.75-.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <!-- تلگرام -->
+                    <a href="#" aria-label="تلگرام" class="text-gray-500 hover:text-sky-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- خط جداکننده و متن کپی‌رایت -->
+        <div class="border-t border-gray-300 mt-13 pt-6 text-center">
+            <p class="text-gray-500 text-sm text-center" dir="rtl">
+             © ۱۴۰۴ - تمامی حقوق برای فروشگاه کوه نگار محفوظ است.
+        </p>
+
+        </div>
+    </div>
+</footer>
+
+
+    
+  <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

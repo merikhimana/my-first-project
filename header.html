@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-tailwind-project</title>
+    <!-- <baraie inke style css dorost bashe in cod ziro mizanim> -->
+ <link rel="stylesheet" href="/src/style.css">
+
+  </head>
+  <body>
+ <header class="site-header relative z-10" dir="rtl" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <!-- ردیف ۱: هدر بالا -->
+  <div class="header-top py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center flex-wrap md:flex-nowrap gap-y-3">
+
+      <!-- عنوان سایت (راست) -->
+      <div class="site-branding flex items-center gap-4 order-1">
+        <!-- دکمه منو (فقط موبایل) -->
+        <button class="md:hidden p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <!-- نام سایت -->
+        <p class="text-2xl font-bold text-blue-600" style="font-family: 'IRANYekanXFaNum', sans-serif;">کوه نگار</p>
+      </div>
+
+      <!-- جستجو (وسط) -->
+      <div class="product-search relative w-full md:w-auto flex-grow order-2 pr-[25px] pl-[200px]">
+        <form role="search" method="get" action="/">
+            <input
+                type="search"
+                class="w-full bg-gray-100 border border-transparent rounded-lg py-2.5 ps-[15px] pe-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-right placeholder:text-right"
+                placeholder="جستجو در محصولات ..."
+                value=""
+                name="s"
+            />
+            <!-- آیکون جستجو با فاصله 200px از چپ -->
+            <span class="absolute left-[230px] top-1/2 -translate-y-1/2 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </form>
+      </div>
+
+      <!-- ورود و سبد خرید (چپ) -->
+      <div class="header-actions flex items-center gap-3 order-3">
+        <a href="#" class="font-medium text-gray-700 hidden md:inline-block px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          ورود
+        </a>
+        <span class="hidden md:block h-6 w-px bg-gray-300"></span>
+        <a href="#" class="cart-icon text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors" title="سبد خرید">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ردیف ۲: منوی اصلی -->
+  <div class="header-main-nav hidden md:block">
+    <div class="container mx-auto px-4">
+      <nav class="main-navigation py-3">
+        <ul class="flex justify-start items-center gap-8 pr-[13px]">
+          <li><a href="husky.html" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر هاسکی</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر نیچرهایک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کایلاس</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر پکینیو (کله گاوی)</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر اسنوهاک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر بلک دیر</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کچوا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

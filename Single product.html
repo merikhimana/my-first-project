@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>چادر هاسکی مدل t4434</title>
+
+  <!-- اگر از Tailwind استفاده می‌کنی -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .loader {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+    .load-error {
+      text-align: center;
+      color: red;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- بخش هدر -->
+  <div id="header">
+    <div class="loader">در حال بارگذاری هدر...</div>
+  </div>
+
+  <!-- بخش محتوای اصلی -->
+  <main id="content" class="min-h-screen">
+    <div id="picfeatures">
+      <div class="loader">در حال بارگذاری اطلاعات محصول...</div>
+    </div>
+    <div id="contentp">
+      <div class="loaderone">در حال بارگذاری اطلاعات محصول...</div>
+    </div>
+     <div id="RelatedProducts">
+      <div class="loadertow">در حال بارگذاری اطلاعات محصول...</div>
+    </div>
+  </main>
+
+  <!--  بخش فوتر -->
+  <div id="footer">
+    <div class="loader">در حال بارگذاری فوتر...</div>
+  </div>
+
+  <!-- اسکریپت بارگذاری فایل‌ها -->
+  <script>
+    async function loadSection(id, file) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`خطا در بارگذاری ${file}`);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        document.getElementById(id).innerHTML =
+          `<div class='load-error'>${error.message}</div>`;
+      }
+    }
+
+    // فراخوانی فایل‌ها
+    loadSection("header", "header.html");
+    loadSection("picfeatures", "pic&features.html");
+    loadSection("contentp", "contentp.html");
+    loadSection("RelatedProducts", "RelatedProducts.html");
+    loadSection("footer", "footer.html");
+  </script>
+  
+</body>
+</html>

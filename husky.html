@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-tailwind-project</title>
+    <!-- <baraie inke style css dorost bashe in cod ziro mizanim> -->
+ <link rel="stylesheet" href="/src/style.css">
+
+  </head>
+  <body>
+ <header class="site-header relative z-10" dir="rtl" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <!-- ردیف ۱: هدر بالا -->
+  <div class="header-top py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center flex-wrap md:flex-nowrap gap-y-3">
+
+      <!-- عنوان سایت (راست) -->
+      <div class="site-branding flex items-center gap-4 order-1">
+        <!-- دکمه منو (فقط موبایل) -->
+        <button class="md:hidden p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <!-- نام سایت -->
+        <p class="text-2xl font-bold text-blue-600" style="font-family: 'IRANYekanXFaNum', sans-serif;">کوه نگار</p>
+      </div>
+
+      <!-- جستجو (وسط) -->
+      <div class="product-search relative w-full md:w-auto flex-grow order-2 pr-[25px] pl-[200px]">
+        <form role="search" method="get" action="/">
+            <input
+                type="search"
+                class="w-full bg-gray-100 border border-transparent rounded-lg py-2.5 ps-[15px] pe-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-right placeholder:text-right"
+                placeholder="جستجو در محصولات ..."
+                value=""
+                name="s"
+            />
+            <!-- آیکون جستجو با فاصله 200px از چپ -->
+            <span class="absolute left-[230px] top-1/2 -translate-y-1/2 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+            </span>
+        </form>
+      </div>
+
+      <!-- ورود و سبد خرید (چپ) -->
+      <div class="header-actions flex items-center gap-3 order-3">
+        <a href="#" class="font-medium text-gray-700 hidden md:inline-block px-3 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          ورود
+        </a>
+        <span class="hidden md:block h-6 w-px bg-gray-300"></span>
+        <a href="#" class="cart-icon text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-colors" title="سبد خرید">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ردیف ۲: منوی اصلی -->
+  <div class="header-main-nav hidden md:block">
+    <div class="container mx-auto px-4">
+      <nav class="main-navigation py-3">
+        <ul class="flex justify-start items-center gap-8 pr-[13px]">
+          <li><a href="husky.html" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر هاسکی</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر نیچرهایک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کایلاس</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر پکینیو (کله گاوی)</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر اسنوهاک</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر بلک دیر</a></li>
+          <li><a href="#" class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">چادر کچوا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+<div class="mx-auto px-4 sm:px-8 md:px-[20px]">
+ <div dir="rtl" class="bg-white p-8">
+  <div class="container mx-auto">
+    
+    <!-- بخش عنوان صفحه (راست‌چین شده) -->
+    <h1 class="text-right text-4xl font-extrabold text-gray-900 mb-4">
+      چادر هاسکی
+    </h1>
+
+    <!-- بخش مسیر سایت (راست‌چین شده) -->
+    <nav class="text-right bg-gray-100 p-3 rounded-md w-full">
+      <ol class="list-none p-0 inline-flex items-center text-sm text-gray-600">
+        <li class="flex items-center">
+          <a href="http://localhost:5173/" class="hover:text-blue-600">خانه</a>
+        </li>
+        <li class="flex items-center mx-2">
+          <span class="text-gray-400">/</span>
+        </li>
+        <li class="flex items-center">
+          <span class="font-semibold text-gray-800">چادر هاسکی</span>
+        </li>
+      </ol>
+    </nav>
+
+  </div>
+</div>
+<!-- =================================================================== -->
+<!-- شروع محتوای اختصاصی صفحه محصولات -->
+<!-- =================================================================== -->
+
+<!-- کانتینر اصلی با چیدمان دو ستونی -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-12 py-16">
+
+    <!-- =================================================================== -->
+    <!-- ستون اول (سمت راست): سایدبار فیلترها -->
+    <!-- =================================================================== -->
+    <aside class="lg:col-span-1 lg:col-start-4 rounded-lg border border-gray-200 p-6">
+        <!-- Wrapper برای ثابت ماندن سایدبار در زمان اسکرول -->
+        <div class="sticky top-24 h-fit max-h-[calc(100vh-12rem)] overflow-y-auto pr-2">
+            <h2 class="text-xl font-bold text-gray-800 mb-6 text-right">فیلترها</h2>
+            
+            <div class="space-y-6">
+                
+                <!-- بخش فیلتر قیمت -->
+                <div class="py-4 border-b">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-right">قیمت</h3>
+                    <input type="range" min="0" max="30000000" value="15000000" step="500000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" id="price-range">
+                    <div class="text-center mt-3 text-sm text-gray-600">
+                        <span id="price-value">۱۵,۰۰۰,۰۰۰</span> تومان
+                    </div>
+                </div>
+
+                <!-- بخش فیلتر برند -->
+                <div class="py-4 border-b">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-right">برند</h3>
+                    <div class="space-y-3 text-right">
+                        <div class="flex items-center justify-end">
+                            <label for="brand-husky" class="mr-3 text-sm text-gray-600">هاسکی</label>
+                            <input id="brand-husky" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <label for="brand-naturehike" class="mr-3 text-sm text-gray-600">نیچرهایک</label>
+                            <input id="brand-naturehike" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <label for="brand-fit" class="mr-3 text-sm text-gray-600">FIT</label>
+                            <input id="brand-fit" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش فیلتر ظرفیت -->
+                <div class="py-4 border-b">
+                     <h3 class="font-semibold text-gray-700 mb-4 text-right">ظرفیت</h3>
+                    <div class="space-y-3 text-right">
+                        <div class="flex items-center justify-end">
+                            <label for="cap-2" class="mr-3 text-sm text-gray-600">دو نفره</label>
+                            <input id="cap-2" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <label for="cap-3" class="mr-3 text-sm text-gray-600">سه نفره</label>
+                            <input id="cap-3" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- بخش فیلتر رنگ -->
+                <div class="py-4 border-b">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-right">رنگ</h3>
+                    <div class="space-y-3 text-right">
+                         <div class="flex items-center justify-end">
+                            <label for="color-yellow" class="mr-3 text-sm text-gray-600">زرد</label>
+                            <input id="color-yellow" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-yellow-500 focus:ring-yellow-400">
+                        </div>
+                         <div class="flex items-center justify-end">
+                            <label for="color-red" class="mr-3 text-sm text-gray-600">قرمز</label>
+                            <input id="color-red" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500">
+                        </div>
+                         <div class="flex items-center justify-end">
+                            <label for="color-blue" class="mr-3 text-sm text-gray-600">آبی</label>
+                            <input id="color-blue" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش فیلتر مناسب برای -->
+                <div class="py-4">
+                    <h3 class="font-semibold text-gray-700 mb-4 text-right">مناسب برای</h3>
+                    <div class="space-y-3 text-right">
+                        <div class="flex items-center justify-end">
+                            <label for="usage-climbing" class="mr-3 text-sm text-gray-600">کوهنوردی</label>
+                            <input id="usage-climbing" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <label for="usage-camping" class="mr-3 text-sm text-gray-600">کمپینگ</label>
+                            <input id="usage-camping" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =================================================================== -->
+    <!-- ستون دوم (سمت چپ): نوار ابزار و لیست محصولات -->
+    <!-- =================================================================== -->
+    <main class="lg:col-span-3 lg:col-start-1 lg:row-start-1">
+        
+        <!-- باکس نوار ابزار (تعداد و مرتب‌سازی) -->
+        <div class="flex flex-col sm:flex-row justify-between items-center rounded-lg border bg-gray-50 px-4 py-3 mb-8">
+            <h2 class="text-md font-medium text-gray-700 mb-3 sm:mb-0">
+                نمایش همه ۱۰ محصول
+            </h2>
+            <div>
+                <select class="rounded-md border-gray-300 text-sm focus:border-blue-500 focus:ring-blue-500">
+                    <option>جدیدترین</option>
+                    <option>محبوب ترین</option>
+                    <option>ارزان ترین</option>
+                    <option>گران ترین</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- گرید نمایش محصولات -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            
+            <!-- از همان کارت محصولی که قبلا ساختیم استفاده می‌کنیم -->
+            <!-- محصول 1 -->
+            <a href="Single product.html" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+1" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر هاسکی مدل t4434</h3><p class="font-bold text-blue-600">۱۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+            
+            <!-- محصول 2 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+2" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر FIT مدل A56.E</h3><p class="font-bold text-blue-600">۲۲,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+            <!-- محصول 3 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+3" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر نیچرهایک مدل VILLAGE</h3><p class="font-bold text-blue-600">۱۰,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+            <!-- محصول 4 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+4" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر بلک دیر مدل CS2040</h3><p class="font-bold text-blue-600">۳۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+              <!-- محصول 5 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+4" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر بلک دیر مدل CS2040</h3><p class="font-bold text-blue-600">۳۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+              <!-- 6 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+4" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر بلک دیر مدل CS2040</h3><p class="font-bold text-blue-600">۳۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+              <!-- محصول 7 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+4" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر بلک دیر مدل CS2040</h3><p class="font-bold text-blue-600">۳۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+              <!-- محصول 8 -->
+            <a href="#" class="group block overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+                <div class="overflow-hidden"><img src="https://placehold.co/297x208/e2e8f0/334155?text=Product+4" alt="محصول نمونه" class="w-full h-[208px] object-cover transition-transform duration-300 group-hover:scale-105"></div>
+                <div class="p-4 text-right"><h3 class="mb-2 text-lg font-semibold text-gray-800 truncate">چادر بلک دیر مدل CS2040</h3><p class="font-bold text-blue-600">۳۵,۰۰۰,۰۰۰ تومان</p></div>
+            </a>
+
+            <!-- می‌توانید این کارت‌ها را به تعداد دلخواه تکرار کنید -->
+
+        </div>
+        
+        <!-- =================================================================== -->
+        <!-- محتوای مربوط به برند در اینجا قرار خواهد گرفت -->
+        <!-- =================================================================== -->
+        <div class="mt-24">
+            <!-- کد بعدی شما اینجا خواهد بود -->
+        </div>
+
+    <!-- ... این بخش کد گرید محصولات شماست ... -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <!-- کارت‌های محصول ... -->
+        </div>
+        
+        <!-- =================================================================== -->
+        <!-- محتوای متنی جدید در اینجا قرار می‌گیرد -->
+        <!-- =================================================================== -->
+        <div class="mt-1">
+            <div class="rounded-lg border border-gray-200 p-6">
+                
+                <!-- عنوان باکس -->
+                <h2 class="text-right text-2xl font-bold text-gray-800 mb-4">
+                    راهنمای انتخاب چادر کوهنوردی
+                </h2>
+                
+                <!-- پاراگراف‌های متن -->
+                <div class="space-y-4 text-right text-gray-600 leading-relaxed">
+                    <p>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.
+                    </p>
+                    <p>
+                        تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    </p>
+
+                     <h2 class="text-right text-2xl font-bold text-gray-800 mb-4">
+                    معرفی سری‌های مختلف چادر هاسکی
+                </h2>
+                p>
+سری Extreme: سری اکستریم هاسکی برای کوهنوردان و طبیعت گردانی که در شرایط سخت جوی کمپ می‌کنند طراحی شده است. چادرهای اسکتریم هاسکی در برابر باد و باران شدید بسیار مقاوم هستند. از مدل های مربوط به این سری می‌توان به چادرهای Falcon، Fighter، Felen و Bronder4 اشاره کرد.
+سری Expedition: این چادرها برای شرایط بسیار سخت و صعودهای بلند طراحی شده‌اند در واقع یک رده بالاتر از سری اکستریم قرار می‌گیرند.
+سری Extreme Lite: چادرهای این سری بسیار سبک هستند و برای کوهنوردان و بک پکرها طراحی شده‌اند اما در عین حال در برابر شرایط نامساعد جوی مقاومت مطلوبی دارند. چادرهای مدل Flame، Bret، Brunel، Sawaj trek در این دسته قرار می‌گیرند.
+سری outdoor: همانطور که از نام این سری مشخص است چادرهای این سری برای سفرهای خانوادگی و گروهی در دل طبیعت طراحی شده‌اند و برای مقاصد کوهنوردی پیشنهاد نمی‌شوند. این چادرها معمولا فضای بیشتری دارند و نصب آن‌ها هم بسیار ساده است چادرهای مدل Bizam، Bizon، Baron، Bird، Boston و Bigless از سری outdoor  هستند.              
+               </p>
+                 <h2 class="text-right text-2xl font-bold text-gray-800 mb-4">
+                    چادر کوهنوردی هاسکی یک نفره
+                </h2>
+                <p>
+                  اگر طبیعت گردی انفرادی را ترجیح می‌دهید، یک چادر سبک و کم حجم از برند هاسکی را به شما پیشنهاد میکنیم یعنی چادر Flame 1. این چادر به اندازه یک نفر ظرفیت دارد. این چادر به خاطر وزن بسیار کم و نصب سریع یک گزینه ایده‌آل برای کوهنوردان و بک پکرهاست.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- =================================================================== -->
+
+    </main>
+<!-- ... -->
+
+ </div>
+</div>
+
+</main>
+
+<!-- =================================================================== -->
+<!-- کد JavaScript برای فیلتر قیمت -->
+<!-- این کد را قبل از تگ پایانی </body> قرار دهید -->
+<!-- =================================================================== -->
+<script>
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+
+    priceRange.addEventListener('input', function() {
+        const value = parseInt(this.value);
+        // فرمت کردن عدد با جداکننده هزارگان فارسی
+        priceValue.textContent = value.toLocaleString('fa-IR');
+    });
+
+    // اجرای اولیه برای نمایش مقدار پیش‌فرض
+    priceValue.textContent = parseInt(priceRange.value).toLocaleString('fa-IR');
+</script>
+
+    
+</main>
+
+
+<!-- =================================================================== -->
+<!-- بخش فوتر سایت -->
+<!-- =================================================================== -->
+<footer class="w-full bg-gray-100 border-t border-gray-200 pt-16 pb-12">
+
+    <!-- کانتینر اصلی محتوای فوتر -->
+    <div class="max-w-[1265px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- گرید ۴ ستونی واکنش‌گرا -->
+        <div dir="rtl" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 text-right">
+
+            <!-- ستون اول: درباره فروشگاه -->
+            <div>
+                <h3 class="font-bold text-gray-800 text-[22px] mb-4">
+                    فروشگاه کوه نگار
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    تجهیزات تخصصی برای ماجراجویی‌های شما. ما به کیفیت و دوام محصولاتمان افتخار می‌کنیم.
+                </p>
+            </div>
+
+            <!-- ستون دوم: دسترسی سریع -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    دسترسی سریع
+                </h4>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">صفحه اصلی</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">همه محصولات</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">سوالات متداول</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">قوانین و مقررات</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ستون سوم: تماس با ما -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    تماس با ما
+                </h4>
+                <div class="text-gray-600 text-sm space-y-3">
+                    <p>
+                        <strong>آدرس:</strong><br>
+                        اراک، پارک علم و فناوری استان مرکزی، پلاک ۳۱۷
+                    </p>
+                    <p>
+                        <strong>تلفن:</strong><br>
+                        ۰۸۶-۳۲۲۲۶۰۳۴
+                    </p>
+                    <p>
+                        <strong>ایمیل:</strong><br>
+                        support@koohnegar.com
+                    </p>
+                </div>
+            </div>
+
+            <!-- ستون چهارم: شبکه‌های اجتماعی -->
+            <div>
+                <h4 class="font-bold text-lg text-gray-800 mb-4">
+                    ما را دنبال کنید
+                </h4>
+                <p class="text-gray-600 text-sm mb-4">
+                    از آخرین اخبار و تخفیف‌ها مطلع شوید.
+                </p>
+                <div class="flex items-center justify-end gap-x-4">
+                    <!-- اینستاگرام -->
+                    <a href="#" aria-label="اینستاگرام" class="text-gray-500 hover:text-pink-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c-4.42 0-5.454 2.115-5.454 6.065v3.868c0 3.95 1.033 6.065 5.454 6.065h.01c4.42 0 5.454-2.115 5.454-6.065v-3.868c0-3.95-1.033-6.065-5.454-6.065zm3.18 10.23c0 2.26-1.06 3.63-3.17 3.63h-.02c-2.11 0-3.17-1.37-3.17-3.63v-3.86c0-2.26 1.06-3.63 3.17-3.63h.02c2.11 0 3.17 1.37 3.17 3.63v3.86zm-6.35-3.86c0-1.78 1.18-2.63 2.18-2.63h.01c1 0 2.18.85 2.18 2.63v3.86c0 1.78-1.18 2.63-2.18 2.63h-.01c-1 0-2.18-.85-2.18-2.63v-3.86zm7.48-2.93c-.41 0-.75.34-.75.75s.34.75.75.75.75-.34.75-.75-.34-.75-.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <!-- تلگرام -->
+                    <a href="#" aria-label="تلگرام" class="text-gray-500 hover:text-sky-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- خط جداکننده و متن کپی‌رایت -->
+        <div class="border-t border-gray-300 mt-13 pt-6 text-center">
+            <p class="text-gray-500 text-sm text-center" dir="rtl">
+             © ۱۴۰۴ - تمامی حقوق برای فروشگاه کوه نگار محفوظ است.
+        </p>
+
+        </div>
+    </div>
+</footer>
+
+    
+    <script type="module" src="/src/main.js"></script>
+</body>
